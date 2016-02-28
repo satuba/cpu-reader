@@ -7,7 +7,7 @@ var obj;
 fs.readFile('./result.json', 'utf8', function(err, data) {
   if(err) throw err;
   obj = JSON.parse(data);
-  fs.writeFile('./index.html', obj.meminfo.Active.size, function (err) {
+  fs.appendFile('./index.html', obj.meminfo.Active.size, function (err) {
     if (err) throw err;
     console.log('The data was appended to file.');
     fs.readFile('./index.html', function(err, html) {
@@ -23,4 +23,3 @@ fs.readFile('./result.json', 'utf8', function(err, data) {
     });
   });
 });
-
