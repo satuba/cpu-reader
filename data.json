@@ -1,0 +1,157 @@
+{
+	
+	"meminfo": {
+	"Active": {
+		"size":"200952",
+		"units":"kB"
+	},
+	"DirectMap2M": {
+		"size":"741376",
+		"units":"kB"
+	},
+	"MemFree": {
+		"size":"253624",
+		"units":"kB"
+	},
+	"MemTotal": {
+		"size":"686544",
+		"units":"kB"
+	},
+	"AnonHugePages": {
+		"size":"8192",
+		"units":"kB"
+	},
+	"VmallocChunk": {
+		"size":"34359698780",
+		"units":"kB"
+	},
+	"PageTables": {
+		"size":"2416",
+		"units":"kB"
+	},
+	"SwapFree": {
+		"size":"0",
+		"units":"kB"
+	},
+	"Mapped": {
+		"size":"11112",
+		"units":"kB"
+	},
+	"WritebackTmp": {
+		"size":"0",
+		"units":"kB"
+	},
+	"VmallocTotal": {
+		"size":"34359738367",
+		"units":"kB"
+	},
+	"Inactive(anon)": {
+		"size":"236",
+		"units":"kB"
+	},
+	"Buffers": {
+		"size":"9704",
+		"units":"kB"
+	},
+	"DirectMap4k": {
+		"size":"44992",
+		"units":"kB"
+	},
+	"Dirty": {
+		"size":"44",
+		"units":"kB"
+	},
+	"Cached": {
+		"size":"279480",
+		"units":"kB"
+	},
+	"SUnreclaim": {
+		"size":"15028",
+		"units":"kB"
+	},
+	"Mlocked": {
+		"size":"0",
+		"units":"kB"
+	},
+	"Active(anon)": {
+		"size":"50656",
+		"units":"kB"
+	},
+	"Slab": {
+		"size":"52912",
+		"units":"kB"
+	},
+	"VmallocUsed": {
+		"size":"33856",
+		"units":"kB"
+	},
+	"Hugepagesize": {
+		"size":"2048",
+		"units":"kB"
+	},
+	"Unevictable": {
+		"size":"0",
+		"units":"kB"
+	},
+	"Shmem": {
+		"size":"284",
+		"units":"kB"
+	},
+	"CommitLimit": {
+		"size":"343272",
+		"units":"kB"
+	},
+	"NFS_Unstable": {
+		"size":"0",
+		"units":"kB"
+	},
+	"HardwareCorrupted": {
+		"size":"0",
+		"units":"kB"
+	},
+	"Bounce": {
+		"size":"0",
+		"units":"kB"
+	},
+	"Committed_AS": {
+		"size":"462892",
+		"units":"kB"
+	},
+	"Inactive": {
+		"size":"138840",
+		"units":"kB"
+	},
+	"SReclaimable": {
+		"size":"37884",
+		"units":"kB"
+	},
+	"Active(file)": {
+		"size":"150296",
+		"units":"kB"
+	},
+	"Writeback": {
+		"size":"0",
+		"units":"kB"
+	},
+	"AnonPages": {
+		"size":"50608",
+		"units":"kB"
+	},
+	"KernelStack": {
+		"size":"2696",
+		"units":"kB"
+	},
+	"Inactive(file)": {
+		"size":"138604",
+		"units":"kB"
+	},
+	"SwapCached": {
+		"size":"0",
+		"units":"kB"
+	},
+	"SwapTotal": {
+		"size":"0",
+		"units":"kB"
+	}
+	}
+}
