@@ -52,6 +52,7 @@ end
 
 last = false
 counter = 1
+data = ""
 
 local function jsonfyValue(avalue, indent, name)
   if not avalue then return end;
@@ -60,9 +61,11 @@ local function jsonfyValue(avalue, indent, name)
 
   if type(avalue) == "table" then
     if name then
-      print(string.format('%s"%s" : {', indent, name))
+      	data = data..'\n\t"'..name..'": {'
+	print(string.format('%s"%s" : {', indent, name))
     else
-      print(string.format("%s{", indent))
+    	data = data.."\n\t{"
+	print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
@@ -78,22 +81,27 @@ local function jsonfyValue(avalue, indent, name)
       end
     end
     if tLength == counter then
-      print(string.format("%s}", indent))
+      	data = data.."\n\t}"
+	print(string.format("%s}", indent))
     else 
-      print(string.format("%s},", indent))
+      	data = data.."\n\t},"
+	print(string.format("%s},", indent))
       counter = counter + 1
     end
   else 
     if name then
       if last == false then
-        print(string.format('%s"%s":%s,', indent, name, literalForValue(avalue)))
+        data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)..","
+	print(string.format('%s"%s":%s,', indent, name, literalForValue(avalue)))
         last = true
       else
+	data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)
         print(string.format('%s"%s":%s', indent, name, literalForValue(avalue)))
         last = false
       end
     else
-      print(string.format("%s%s,", indent, literalForValue(avalue)))
+      	data = data..'\n\t"'..literalForValue(avalue)..'",'
+	print(string.format("%s%s,", indent, literalForValue(avalue)))
     end
   end
 end
@@ -108,4 +116,6 @@ else
 end
 print("}")
 
-
+local file = io.open("data.json", "w")
+file:write("{\n\t"..data.."\n}")
+file:close()
