@@ -2,6 +2,14 @@
 var express = require("express");
 var bodyparser = require("body-parser");
 var fs = require("fs");
+var child_process = require('child_process');
+
+function updateData(){
+  child_process.exec('luajit jsonfythis.lua meminfo', function(error, stdout, stderr){
+    if(error) throw error;
+    //console.log('luajit script called');
+  });
+}
 
 module.exports = function(router) {
   router.use(bodyparser.json());
@@ -10,6 +18,7 @@ module.exports = function(router) {
       if (err) {console.log(err);}
       var fileContent = JSON.parse(data.toString());
       res.json(fileContent);
+      updateData();
     });
   });
 };
