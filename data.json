@@ -2,7 +2,7 @@
 	
 	"meminfo": {
 	"Active": {
-		"size":"200952",
+		"size":"223156",
 		"units":"kB"
 	},
 	"DirectMap2M": {
@@ -10,7 +10,7 @@
 		"units":"kB"
 	},
 	"MemFree": {
-		"size":"253624",
+		"size":"237820",
 		"units":"kB"
 	},
 	"MemTotal": {
@@ -18,15 +18,15 @@
 		"units":"kB"
 	},
 	"AnonHugePages": {
-		"size":"8192",
+		"size":"10240",
 		"units":"kB"
 	},
 	"VmallocChunk": {
-		"size":"34359698780",
+		"size":"34359698684",
 		"units":"kB"
 	},
 	"PageTables": {
-		"size":"2416",
+		"size":"2676",
 		"units":"kB"
 	},
 	"SwapFree": {
@@ -34,7 +34,7 @@
 		"units":"kB"
 	},
 	"Mapped": {
-		"size":"11112",
+		"size":"18268",
 		"units":"kB"
 	},
 	"WritebackTmp": {
@@ -50,7 +50,7 @@
 		"units":"kB"
 	},
 	"Buffers": {
-		"size":"9704",
+		"size":"9112",
 		"units":"kB"
 	},
 	"DirectMap4k": {
@@ -58,15 +58,15 @@
 		"units":"kB"
 	},
 	"Dirty": {
-		"size":"44",
+		"size":"8",
 		"units":"kB"
 	},
 	"Cached": {
-		"size":"279480",
+		"size":"273020",
 		"units":"kB"
 	},
 	"SUnreclaim": {
-		"size":"15028",
+		"size":"15196",
 		"units":"kB"
 	},
 	"Mlocked": {
@@ -74,11 +74,11 @@
 		"units":"kB"
 	},
 	"Active(anon)": {
-		"size":"50656",
+		"size":"71668",
 		"units":"kB"
 	},
 	"Slab": {
-		"size":"52912",
+		"size":"54292",
 		"units":"kB"
 	},
 	"VmallocUsed": {
@@ -114,19 +114,19 @@
 		"units":"kB"
 	},
 	"Committed_AS": {
-		"size":"462892",
+		"size":"549664",
 		"units":"kB"
 	},
 	"Inactive": {
-		"size":"138840",
+		"size":"130596",
 		"units":"kB"
 	},
 	"SReclaimable": {
-		"size":"37884",
+		"size":"39096",
 		"units":"kB"
 	},
 	"Active(file)": {
-		"size":"150296",
+		"size":"151488",
 		"units":"kB"
 	},
 	"Writeback": {
@@ -134,15 +134,15 @@
 		"units":"kB"
 	},
 	"AnonPages": {
-		"size":"50608",
+		"size":"71620",
 		"units":"kB"
 	},
 	"KernelStack": {
-		"size":"2696",
+		"size":"2784",
 		"units":"kB"
 	},
 	"Inactive(file)": {
-		"size":"138604",
+		"size":"130360",
 		"units":"kB"
 	},
 	"SwapCached": {

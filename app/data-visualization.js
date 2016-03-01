@@ -12,10 +12,9 @@ function visualize() {
     dataType : 'json',
     success: function (jsonData) {
       obj = jsonData;
-      console.log('jsonData', obj);
-      //run script here to update the json file ()
+      console.log('jsonData', obj.meminfo.Shmem.size); 
       var nodes = [
-        {x: counter, y: obj.meminfo.MemTotal.size/10000}
+        {x: counter, y: obj.meminfo.Shmem.size}
       ];
       
       vis.attr("width", w)
@@ -31,8 +30,7 @@ function visualize() {
         .attr("cy", function(d) { return d.y; })
         .attr("r", "10px")
         .attr("fill", "black")
-      counter += 10;
-
+      counter += 10;        
     },
     error: function(err){
       console.log(err);
