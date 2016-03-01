@@ -1,0 +1,1 @@
+luajit jsonfy.lua meminfo
