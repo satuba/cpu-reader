@@ -59,10 +59,10 @@ local function jsonfyValue(avalue, indent, name)
   if type(avalue) == "table" then
     if name then
       	data = data..'\n\t"'..name..'": {'
-	print(string.format('%s"%s" : {', indent, name))
+--	print(string.format('%s"%s" : {', indent, name))
     else
     	data = data.."\n\t{"
-	print(string.format("%s{", indent))
+--	print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
@@ -79,39 +79,39 @@ local function jsonfyValue(avalue, indent, name)
     end
     if tLength == counter then
       	data = data.."\n\t}"
-	print(string.format("%s}", indent))
+--	print(string.format("%s}", indent))
     else 
       	data = data.."\n\t},"
-	print(string.format("%s},", indent))
+--	print(string.format("%s},", indent))
       counter = counter + 1
     end
   else 
     if name then
       if last == false then
         data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)..","
-	print(string.format('%s"%s":%s,', indent, name, literalForValue(avalue)))
+--	print(string.format('%s"%s":%s,', indent, name, literalForValue(avalue)))
         last = true
       else
 	data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)
-        print(string.format('%s"%s":%s', indent, name, literalForValue(avalue)))
+  --      print(string.format('%s"%s":%s', indent, name, literalForValue(avalue)))
         last = false
       end
     else
       	data = data..'\n\t"'..literalForValue(avalue)..'",'
-	print(string.format("%s%s,", indent, literalForValue(avalue)))
+--	print(string.format("%s%s,", indent, literalForValue(avalue)))
     end
   end
 end
 
 if not filename then USAGE() end
 
-print("{")
-if PID then
-  jsonfyValue(procfs[PID][filename], ' ', tostring(PID).."_"..filename)
-else
-  jsonfyValue(procfs[filename], " ", filename)
-end
-print("}")
+--print("{")
+--if PID then
+--  jsonfyValue(procfs[PID][filename], ' ', tostring(PID).."_"..filename)
+--else
+jsonfyValue(procfs[filename], " ", filename)
+--end
+--print("}")
 
 local file = io.open("data.json", "w")
 file:write("{\n\t"..data.."\n}")

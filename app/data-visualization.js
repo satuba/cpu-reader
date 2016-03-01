@@ -12,7 +12,7 @@ function visualize() {
     dataType : 'json',
     success: function (jsonData) {
       obj = jsonData;
-      console.log('jsonData', obj.meminfo.Shmem.size); 
+      console.log('jsonData', obj.meminfo.Active.size); 
       var nodes = [
         {x: counter, y: obj.meminfo.Shmem.size}
       ];
