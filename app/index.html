@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>CPU READER</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- <script id="data" type="application/json" src="data.json"></script> -->
+  </head>
+  <body>
+    <button>start</button>
+    <p id="output"></p>
+    <ul>
+      <li>Maximum speed: <span id="maxSpeed"></span></li>
+      <li>Sockets: <span id="sockets"></span></li>
+      <li>Cores: <span id="cores"></span></li>
+      <li>Logical Processors: <span id="logProcessors"></span></li>
+      <li>Virtualization: <span id="virtualization"></span></li>
+    </ul>
+    <table>
+      <tr>
+        <td>Utilization</td>
+        <td id="utilization"></td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td id="speed"></td>
+      </tr>
+      <tr>
+        <td>Process</td>
+        <td id="process"></td>
+      </tr>
+      <tr>
+        <td>Threads</td>
+        <td id="threads"></td>
+      </tr>
+      <tr>
+        <td>Handles</td>
+        <td id="handles"></td>
+      </tr>
+    </table>
+    <p id="graph"></p>
+    <script type="text/javascript" src="./data-visualization.js"></script>
+  </body>
+</html>
