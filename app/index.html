@@ -1,34 +1,8 @@
 <!DOCTYPE>
 <html>
   <head>
-    <style>
-      /* tell the SVG path to be a thin blue line without any area fill */
-      path {
-        stroke: steelblue;
-        stroke-width: 1;
-        fill: none;
-      }
-      
-      .axis {
-        shape-rendering: crispEdges;
-      }
-      .x.axis line {
-        stroke: lightgrey;
-      }
-      .x.axis .minor {
-        stroke-opacity: .5;
-      }
-      .x.axis path {
-        display: none;
-      }
-      .y.axis line, .y.axis path {
-        fill: none;
-        stroke: #000;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>CPU READER</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   </head>
   <body>   
     <table>
@@ -38,6 +12,8 @@
       </tr>
     </table>
     <div id="graph" class="aGraph"></div>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./data-visualization.js"></script>
   </body>
 </html>
