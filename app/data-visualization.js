@@ -10,7 +10,7 @@ function visualize(json) {
   // var random = getRandomInt(0, 100);
   // dataHistory.push(random);
 
-  $('#memory').html(percentage.toFixed(2));
+  $('#memory').html(percentage.toFixed(4));
   //$('#memory').html(random);
 
   d3.select('#graph').selectAll("svg").remove();
