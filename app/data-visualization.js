@@ -3,15 +3,15 @@ var dataHistory = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 function visualize(json) {
   var percentage = 100-(json.meminfo.MemFree.size/json.meminfo.MemTotal.size*100);
   dataHistory.shift();
-  //dataHistory.push(percentage);
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-  var random = getRandomInt(0, 100);
-  dataHistory.push(random);
+  dataHistory.push(percentage);
+  // function getRandomInt(min, max) {
+  //   return Math.floor(Math.random() * (max - min)) + min;
+  // }
+  // var random = getRandomInt(0, 100);
+  // dataHistory.push(random);
 
-  //$('#memory').html(percentage.toFixed(2));
-  $('#memory').html(random);
+  $('#memory').html(percentage.toFixed(2));
+  //$('#memory').html(random);
 
   d3.select('#graph').selectAll("svg").remove();
   var margin = [20, 20, 20, 20];
