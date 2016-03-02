@@ -7,6 +7,8 @@ function visualize(json) {
   dataHistory.shift();
   dataHistory.push(percentage);
 
+  $('#memory').html(percentage.toFixed(2));
+
   temporaryCounter += 1;  
   counter += 1; 
 
@@ -16,7 +18,7 @@ function visualize(json) {
   var h = 400 - m[0] - m[2]; // height
   
   var data = dataHistory;
-  var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
+  var x = d3.scale.linear().domain([0, 20]).range([0, w]);
   var y = d3.scale.linear().domain([0, 100]).range([h, 0]);
 
   var line = d3.svg.line()
@@ -55,6 +57,7 @@ function ajaxCall() {
     dataType : 'json',
     success: function (jsonData) {
       visualize(jsonData);
+      addValues(jsonData);
     },
     error: function(err){
       console.log(err);
