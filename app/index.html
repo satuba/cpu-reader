@@ -2,16 +2,17 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>CPU READER</title>
+    <title>CPU RAM READER</title>
   </head>
-  <body>   
-    <table>
-      <tr>
-        <td>Memory Usage %</td>
-        <td id="memory"></td>
-      </tr>
-    </table>
-    <div id="graph" class="aGraph"></div>
+  <body>
+    <p id="model"></p>
+    <button id="cpuButton">CPU</button>
+    <button id="ramButton">RAM</button>
+    <div>
+    <p>RAM usage %: <span id="ram"></span> CPU usage %: <span id="cpu"></span></p>
+    </div>
+    <div id="ramGraph" class="aGraph"></div>
+    <div id="cpuGraph" class="aGraph"></div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./data-visualization.js"></script>
