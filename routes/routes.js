@@ -16,7 +16,7 @@ module.exports = function(router) {
     fs.readFile("./data.json", function(err, data) {
       if (err) {console.log(err);}
       var fileContent = JSON.parse(data.toString());
-      res.json(fileContent);
+      res.json(fileContent); 
       updateData();
     });
   });
