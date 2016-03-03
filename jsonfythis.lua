@@ -1,9 +1,8 @@
 local procfs = require("lj2procfs.procfs")
-local putil = require("lj2procfs.print-util")
 
 local function USAGE()
   print ([[
-  USAGE: 
+  USAGE:
     $ sudo ./procfile [PID] <filename>
   where <filename> is the name of a file in the /proc
   directory.
@@ -12,7 +11,7 @@ local function USAGE()
     $ sudo ./procfile 13654 limits
   ]])
 
-  error() 
+  error()
 end
 
 local filename = nil
@@ -59,14 +58,11 @@ local function jsonfyValue(avalue, indent, name)
   if type(avalue) == "table" then
     if name then
       	data = data..'\n\t"'..name..'": {'
---	print(string.format('%s"%s" : {', indent, name))
     else
     	data = data.."\n\t{"
---	print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
-      -- it's a list,so use ipairs
       for _, value in ipairs(avalue) do
         jsonfyValue(value, indent..'    ')
       end
@@ -74,45 +70,32 @@ local function jsonfyValue(avalue, indent, name)
       -- assume it's a dictionary, so use pairs
       for key, value in pairs(avalue) do
         jsonfyValue(value, indent..'    ', key)
-        --tablesize = tablesize + 1
       end
     end
     if tLength == counter then
       	data = data.."\n\t}"
---	print(string.format("%s}", indent))
-    else 
+    else
       	data = data.."\n\t},"
---	print(string.format("%s},", indent))
       counter = counter + 1
     end
-  else 
+  else
     if name then
       if last == false then
         data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)..","
---	print(string.format('%s"%s":%s,', indent, name, literalForValue(avalue)))
         last = true
       else
 	data = data..'\n\t\t"'..name..'":'..literalForValue(avalue)
-  --      print(string.format('%s"%s":%s', indent, name, literalForValue(avalue)))
         last = false
       end
     else
       	data = data..'\n\t"'..literalForValue(avalue)..'",'
---	print(string.format("%s%s,", indent, literalForValue(avalue)))
     end
   end
 end
 
 if not filename then USAGE() end
 
---print("{")
---if PID then
---  jsonfyValue(procfs[PID][filename], ' ', tostring(PID).."_"..filename)
---else
 jsonfyValue(procfs[filename], " ", filename)
---end
---print("}")
-
 local file = io.open("data.json", "w")
 file:write("{\n\t"..data.."\n}")
 file:close()
