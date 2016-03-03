@@ -13,23 +13,28 @@ function updateData(){
 
 function calculateCPU(){
   var cpus = os.cpus();
-  var totalIdle = 0;
-  var totalTick = 0;
-  var model = "";
+  var model;
+  var totalCpu = 0;
 
-  for(var i = 0; i < cpus.length; i++) {
+  for(var i = 0, len = cpus.length; i < len; i++) {
     var cpu = cpus[i];
-    for(var type in cpu.times) {
-      totalTick += cpu.times[type];
-   }
-    totalIdle += cpu.times.idle;
+    var total = 0;
+    var processTotal = 0;
     model = cpu.model;
+
+    for(var type in cpu.times){
+      total += cpu.times[type];
+    }
+
+    for(var type in cpu.times){
+      var percent = 100 * cpu.times[type] / total;
+      if(type != 'idle'){
+        processTotal += percent;
+      }
+    }
+    totalCpu += processTotal;
   }
-
-  totalIdle = totalIdle / cpus.length;
-  totalTick = totalTick / cpus.length;
-
-  return {cpu: 100-(totalIdle/totalTick*100), model: model};
+  return {cpu: totalCpu/cpus.length, model: model};
 }
 
 module.exports = function(router) {
