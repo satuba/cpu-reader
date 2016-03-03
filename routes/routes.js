@@ -7,7 +7,6 @@ var child_process = require('child_process');
 function updateData(){
   child_process.exec('luajit jsonfythis.lua meminfo', function(error, stdout, stderr){
     if(error) throw error;
-    //console.log('luajit script called');
   });
 }
 
